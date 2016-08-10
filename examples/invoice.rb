@@ -1,4 +1,5 @@
 require 'prawn'
+require "prawn/table"
 require 'date'
 
 pdf = Prawn::Document.new
