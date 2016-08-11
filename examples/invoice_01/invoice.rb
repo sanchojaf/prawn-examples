@@ -28,7 +28,7 @@ end
 
 pdf.grid([0,3.6], [1,4]).bounding_box do 
   # Assign the path to your file name first to a local variable.
-  logo_path = File.expand_path('../../image/gravatar.jpg', __FILE__)
+  logo_path = File.expand_path('../../../image/gravatar.jpg', __FILE__)
 
   # Displays the image in your PDF. Dimensions are optional.
   pdf.image logo_path, :width => 50, :height => 50, :position => :left

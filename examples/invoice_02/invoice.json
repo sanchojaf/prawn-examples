@@ -1,0 +1,115 @@
+  {
+      "customer": {
+        "firstname": "John",
+        "lastname": "David",
+        "email": "john@example.com",
+        "billing_address": {
+          "firstname": "John",
+          "lastname": "David",
+          "address1": "1992 Colonial Drive",
+          "address2": "Apt 610",
+          "city": "Houston",
+          "state": "Texas",
+          "country": "U.S.A",
+          "phone": "979-635-7863",
+          "zipcode": "77060"
+        },
+        "shipping_address": {
+          "firstname": "John",
+          "lastname": "David",
+          "address1": "16 Elm St",
+          "address2": "",
+          "city": "Houston",
+          "state": "Texas",
+          "country": "U.S.A",
+          "phone": "979-635-7863",
+          "zipcode": "77060"
+        }
+      },
+      "invoice_number": "INV-00001",
+      "date": "2013-11-18",
+      "payment_terms": 15,
+      "due_date": "2013-12-03",
+      "discount": 0.00,
+      "salesperson_name": "",
+      "line_items": [
+        {
+          "sku": "982000000030049",
+          "name": "Hard Drive",
+          "description": "500GB, USB 2.0 interface 1400 rpm, protective hard case.",
+          "item_order": 1,
+          "rate": 120.00,
+          "unit": "",
+          "quantity": 1.00,
+          "discount": 0.00
+        },
+        {
+          "sku": "982000000030051",
+          "name": "Premium Plan - Web hosting",
+          "description": "10 GB Space, 300 GB Transfer 100 Email Accounts 10 MySQL Databases",
+          "item_order": 2,
+          "rate": 33.00,
+          "unit": "",
+          "quantity": 1.00,
+          "discount": 0.00
+        }
+      ],
+      "adjustments": [
+        {
+          "label": "20% OFF Promo Code",
+          "amount": 10.00
+        },
+        {
+          "label": "25% off Electronics & Gadgets",
+          "amount": 15.00
+        }
+      ],
+      "shipments": [
+        {
+          "shipping_method": "SecondDay",
+          "cost": 15.00
+        },
+        {
+          "shipping_method": "Overnight",
+          "cost": 25.00
+        }
+      ],
+      "payment_options": {
+        "payment_gateways": [
+          {
+            "gateway_name": "paypal",
+            "additional_field1": "standard",
+            "source_type": "credit card",
+            "number": "P10293",
+            "updated_at": "2013-12-03",
+            "amount": 25.00
+          },
+          {
+            "gateway_name": "authorize_net",
+            "additional_field1": "",
+            "source_type": "credit card",
+            "number": "P12394",
+            "updated_at": "2013-12-03",
+            "amount": 25.00
+          },
+          {
+            "gateway_name": "stripe",
+            "additional_field1": "",
+            "source_type": "credit card",
+            "number": "P12344",
+            "updated_at": "2013-12-03",
+            "amount": 25.00
+          }
+        ]
+      },
+      "allow_partial_payments": true,
+      "custom_body": "",
+      "custom_subject": "",
+      "notes": "Thanks for your business.",
+      "terms": "All cheques should be crossed and made payable to Awesomeness Ptd Ltd",
+      "shipping_charge": 0.00,
+      "adjustment": 0.00,
+      "adjustment_description": "",
+      "item_total": 200.00,
+      "reason": ""
+    }
