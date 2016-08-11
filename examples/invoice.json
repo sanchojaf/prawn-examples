@@ -1,0 +1,66 @@
+  {
+      "address": {
+        "firstname": "John",
+        "lastname": "David",
+        "address1": "1992 Colonial Drive",
+        "address2": "Apt 610",
+        "city": "Houston",
+        "state": "Texas",
+        "country": "U.S.A",
+        "phone": "979-635-7863",
+        "zipcode": "77060"
+      },
+      "invoice_number": "INV-00001",
+      "date": "2013-11-18",
+      "payment_terms": 15,
+      "due_date": "2013-12-03",
+      "discount": 0.00,
+      "salesperson_name": "",
+      "line_items": [
+        {
+          "item_id": "982000000030049",
+          "name": "Hard Drive",
+          "description": "500GB, USB 2.0 interface 1400 rpm, protective hard case.",
+          "item_order": 1,
+          "rate": 120.00,
+          "unit": "",
+          "quantity": 1.00,
+          "discount": 0.00
+        },
+        {
+          "item_id": "982000000030051",
+          "name": "Premium Plan - Web hosting",
+          "description": "10 GB Space, 300 GB Transfer 100 Email Accounts 10 MySQL Databases",
+          "item_order": 2,
+          "rate": 33.00,
+          "unit": "",
+          "quantity": 1.00,
+          "discount": 0.00
+        }
+      ],
+      "payment_options": {
+        "payment_gateways": [
+          {
+            "gateway_name": "paypal",
+            "additional_field1": "standard"
+          },
+          {
+            "gateway_name": "authorize_net",
+            "additional_field1": ""
+          },
+          {
+            "gateway_name": "stripe",
+            "additional_field1": ""
+          }
+        ]
+      },
+      "allow_partial_payments": true,
+      "custom_body": "",
+      "custom_subject": "",
+      "notes": "Thanks for your business.",
+      "terms": "All cheques should be crossed and made payable to Awesomeness Ptd Ltd",
+      "shipping_charge": 0.00,
+      "adjustment": 0.00,
+      "adjustment_description": "",
+      "reason": ""
+    }
