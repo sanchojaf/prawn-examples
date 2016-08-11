@@ -18,9 +18,9 @@ font_style = {
 pdf.font "Helvetica"
 
 pdf.repeat(:all) do
-  logo_path = File.expand_path('../../../image/gravatar.jpg', __FILE__)
+  logo_path = File.expand_path('../../../image/gravatar.png', __FILE__)
 
-  pdf.image logo_path, vposition: :top, height: 40, scale: ENV['LOGO_SCALE']
+  pdf.image logo_path, vposition: :top, width: 50, height: 30, scale: ENV['LOGO_SCALE']
 
   pdf.grid([0,3], [1,4]).bounding_box do
     pdf.text 'Print Invoice', align: :right, style: :bold, size: 18
