@@ -41,20 +41,22 @@ pdf.grid([1,0], [6,4]).bounding_box do
     ship_address = data['customer']['shipping_address']
 
     pdf.move_down 2
-    address_cell_billing  = pdf.make_cell(content: 'bill_address', font_style: :bold)
-    address_cell_shipping = pdf.make_cell(content: 'ship_address', font_style: :bold)
+    address_cell_billing  = pdf.make_cell(content: 'Billing Address', font_style: :bold)
+    address_cell_shipping = pdf.make_cell(content: 'Shipping Address', font_style: :bold)
 
     billing =  "#{bill_address['firstname']} #{bill_address['lastname']}"
     billing << "\n#{bill_address['address1']}"
-    billing << "\n#{bill_address['address2']}" unless bill_address['address2'].nil?
-    billing << "\n#{bill_address['city']}, #{bill_address['state']} #{bill_address['zipcode']}"
+    billing << "\n#{bill_address['address2']}" unless bill_address['address2'].nil? || bill_address['address2'] == ''
+    billing << "\n#{bill_address['city']}"
+    billing << "\n#{bill_address['state']} #{bill_address['zipcode']}"
     billing << "\n#{bill_address['country']}"
     billing << "\n#{bill_address['phone']}"
 
     shipping =  "#{ship_address['firstname']} #{ship_address['lastname']}"
     shipping << "\n#{ship_address['address1']}"
-    shipping << "\n#{ship_address['address2']}" unless ship_address['address2'].nil?
-    shipping << "\n#{ship_address['city']}, #{ship_address['state']} #{ship_address['zipcode']}"
+    shipping << "\n#{ship_address['address2']}" unless ship_address['address2'].nil? || ship_address['address2'] == ''
+    shipping << "\n#{ship_address['city']}"
+    shipping << "\n#{ship_address['state']} #{ship_address['zipcode']}"
     shipping << "\n#{ship_address['country']}"
     shipping << "\n#{ship_address['phone']}"
 #    shipping << "\n\n#{'Print Invoice'} #{printable.shipping_methods.join(", ")}"
@@ -70,12 +72,12 @@ pdf.grid([1,0], [6,4]).bounding_box do
   pdf.move_down 10
     
   header = [
-    pdf.make_cell(content: 'sku'),
-    pdf.make_cell(content: 'name'),
-    pdf.make_cell(content: 'description'),
-    pdf.make_cell(content: 'price'),
-    pdf.make_cell(content: 'qty'),
-    pdf.make_cell(content: 'total')
+    pdf.make_cell(content: 'Sku'),
+    pdf.make_cell(content: 'Name'),
+    pdf.make_cell(content: 'Description'),
+    pdf.make_cell(content: 'Price'),
+    pdf.make_cell(content: 'Qty'),
+    pdf.make_cell(content: 'Total')
   ]
   data_items = [header]
 
@@ -108,7 +110,7 @@ pdf.grid([1,0], [6,4]).bounding_box do
 
   # Subtotal
   total += data['item_total']
-  totals << [pdf.make_cell(content: 'subtotal'), data['item_total']]
+  totals << [pdf.make_cell(content: 'Subtotal'), data['item_total']]
 
   # Adjustments
   data['adjustments'].each do |adjustment|
@@ -123,15 +125,15 @@ pdf.grid([1,0], [6,4]).bounding_box do
   end
 
   # Totals
-  totals << [pdf.make_cell(content: 'order_total'), total]
+  totals << [pdf.make_cell(content: 'Order total'), total]
 
 #  # Payments
   total_payments = 0.0
   data['payment_options']['payment_gateways'].each do |payment|
     value = "#{payment['gateway_name']} "
-    value = "\n gateway: #{payment['source_type']}"
-    value = "\n number: #{payment['number']}"
-    value = "\n date: #{payment['updated_at']}"
+    value += "\n gateway: #{payment['source_type']}"
+    value += "\n number: #{payment['number']}"
+    value += "\n date: #{payment['updated_at']}"
   
     totals << [
       pdf.make_cell(content: value),
@@ -142,8 +144,8 @@ pdf.grid([1,0], [6,4]).bounding_box do
 
   totals_table_width = [0.875, 0.125].map { |w| w * pdf.bounds.width }
   pdf.table(totals, column_widths: totals_table_width) do
-    row(0..6).style align: :right
-    column(0).style borders: [], font_style: :bold
+    row(0..7).style align: :right
+    column(0).style borders: []
   end
 
   pdf.move_down 30

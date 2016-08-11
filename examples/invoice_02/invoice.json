@@ -34,7 +34,7 @@
       "salesperson_name": "",
       "line_items": [
         {
-          "sku": "982000000030049",
+          "sku": "98200",
           "name": "Hard Drive",
           "description": "500GB, USB 2.0 interface 1400 rpm, protective hard case.",
           "item_order": 1,
@@ -44,13 +44,23 @@
           "discount": 0.00
         },
         {
-          "sku": "982000000030051",
+          "sku": "98205",
           "name": "Premium Plan - Web hosting",
           "description": "10 GB Space, 300 GB Transfer 100 Email Accounts 10 MySQL Databases",
           "item_order": 2,
           "rate": 33.00,
           "unit": "",
           "quantity": 1.00,
+          "discount": 0.00
+        },
+        {
+          "sku": "98206",
+          "name": "Amco Rub Away Bar",
+          "description": "Rubbing the bar removes any odor from your hands",
+          "item_order": 2,
+          "rate": 7.50,
+          "unit": "",
+          "quantity": 3.00,
           "discount": 0.00
         }
       ],
@@ -68,10 +78,6 @@
         {
           "shipping_method": "SecondDay",
           "cost": 15.00
-        },
-        {
-          "shipping_method": "Overnight",
-          "cost": 25.00
         }
       ],
       "payment_options": {
