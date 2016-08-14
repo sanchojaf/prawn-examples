@@ -59,14 +59,8 @@ pdf.grid([1,0], [6,4]).bounding_box do
     shipping << "\n#{ship_address['state']} #{ship_address['zipcode']}"
     shipping << "\n#{ship_address['country']}"
     shipping << "\n#{ship_address['phone']}"
-#    shipping << "\n\n#{'Print Invoice'} #{printable.shipping_methods.join(", ")}"
-
     data_address = [[address_cell_billing, address_cell_shipping], [billing, shipping]]
-    
-    
     pdf.table(data_address, position: :center, column_widths: [pdf.bounds.width / 2, pdf.bounds.width / 2])
-
-
   end
 
   pdf.move_down 10
